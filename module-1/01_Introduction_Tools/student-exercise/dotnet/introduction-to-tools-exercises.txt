@@ -15,7 +15,7 @@ actual command from other text in Unix documentation.
     refer to?
 ----
 
-<type your response here>
+The Tilde in the terminal usually refers to the home directory. In this case it would be my Windows user profile.
 
 ----
 3.  A good habit to develop, especially while you're developing your skills on
@@ -25,6 +25,8 @@ actual command from other text in Unix documentation.
 
 $ pwd
 <type or copy-paste the result here>
+garryle@Student-00265 MINGW64 ~/Workspaces/GarryLe-c/module-1/01_Introduction_Tools/student-exercise/dotnet/csharp-helloworld (master)
+
 
 The present working directory displayed should match the directory you changed
 to in Exercise 1.  Note, the two may not match at the very beginning if you
@@ -41,21 +43,32 @@ changes directory, and the "pwd" command reflects this.
 
 $ ls -la
 <type or copy-paste the result here>
+total 12
+drwxr-xr-x 1 garryle 197121   0 May 13 13:30 ./
+drwxr-xr-x 1 garryle 197121   0 May 13 13:30 ../
+drwxr-xr-x 1 garryle 197121   0 May 13 13:30 database/
+drwxr-xr-x 1 garryle 197121   0 May 13 13:30 Helloworld/
+-rw-r--r-- 1 garryle 197121 998 May 13 13:15 Helloworld.sln
 
 
 ----
-5.  What do the "." and ".." directories displayed in the directory listing in
+5.  What does the "." and ".." directories displayed in the directory listing in
     Exercise 4 represent?
 ----
 
 <type your answer here>
-
+"." = Current Directory
+".." = Parent Directory
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
     directory listing in Exercise 4?
 ----
 
 <type or copy-paste your answer here>
+"." = Helloworld.sln
+".." = introduction-to-tools-exercises.txt  README.md  version.md
+database = pagila.sql
+Helloworld = App.config  Helloworld.csproj  Program.cs
 
 
 ----
@@ -64,8 +77,8 @@ $ ls -la
 ----
 
 <type or copy-paste your answer here>
-
-
+"." = database/, Helloworld/
+".." = csharp-helloworld/, 
 ----
 8.  Helloworld.sln is a Visual Studio project file. You will learn more about project
     files in later lectures. As for the exercise, it is sometimes necessary (and usually
@@ -96,7 +109,11 @@ $ less database/pagila.sql
 You are encouraged to make "less" part of your standard command line toolkit.
 
 <type or copy-paste the first five lines of either file here>
-
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helloworld", "Helloworld\Helloworld.csproj", "{
 ----
 9.  This is good time to create a Git snapshot of your progress.  Usually,
     you'll want to check the Git status to review the list of files that
