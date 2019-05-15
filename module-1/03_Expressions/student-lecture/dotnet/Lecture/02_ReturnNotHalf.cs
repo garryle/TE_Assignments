@@ -13,9 +13,9 @@ namespace Lecture
             Change it so that it returns something other than a 0.5.
             TOPIC: Return Values
         */
-        public double ReturnNotHalf()
+        public int ReturnNotHalf()
         {
-            return 0.5;
+            return 0.4;
         }
     }
 }

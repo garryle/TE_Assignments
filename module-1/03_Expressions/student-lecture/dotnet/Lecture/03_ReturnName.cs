@@ -15,7 +15,8 @@ namespace Lecture
         */
         public string ReturnName()
         {
-            return null;
+            string myName = "Garry Le";
+            reutrn myName;
         }
 
     }

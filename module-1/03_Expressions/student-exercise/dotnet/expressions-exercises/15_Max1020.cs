@@ -17,7 +17,25 @@ namespace Exercises
       */
         public int Max1020(int a, int b)
         {
-            return 0;
+            int result =  0;
+
+            // check first value to see if it between 10 .. 20 inclusively
+            bool aInRange = a >= 10 && a <= 20;
+
+            //check second value to see if it is between 10..20 incluseive
+            bool bInRange = b >= 10 && b <= 20;
+
+            // if either value is true return the larger one
+            if (aInRange || bInRange)
+            {
+                result = a;
+
+                if ((b > a && bInRange) || (b < a && !aInRange))
+                {
+                    result = b;
+                }
+            }
+            return result;
         }
 
     }

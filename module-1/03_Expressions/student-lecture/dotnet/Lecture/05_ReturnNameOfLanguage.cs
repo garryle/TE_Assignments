@@ -13,9 +13,10 @@ namespace Lecture
             Change the code so it does that.
             TOPIC: Return Types
         */
-        public bool ReturnNameOfLanguage()
+        public string ReturnNameOfLanguage()
         {
-            return false;
+            string myLang = "C#";
+            return myLang;
         }
     }
 }
