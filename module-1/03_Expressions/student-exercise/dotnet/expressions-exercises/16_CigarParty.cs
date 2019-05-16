@@ -17,9 +17,23 @@ namespace Exercises
          CigarParty(50, false) → true
          CigarParty(70, true) → true
          */
+
+        // Success when 40...60
+        // 
         public bool CigarParty(int cigars, bool isWeekend)
         {
-            return false;
+            if (cigars >= 40 && cigars <= 60)
+            {
+                return true;
+            }
+            if (isWeekend == true && cigars >= 40)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

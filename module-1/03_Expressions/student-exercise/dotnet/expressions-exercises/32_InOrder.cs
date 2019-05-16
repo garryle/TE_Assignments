@@ -17,7 +17,10 @@ namespace Exercises
          */
         public bool InOrder(int a, int b, int c, bool bOk)
         {
-            return false;
+            if (bOk == true)
+                return c > b;
+
+                return b > a && c > b;
         }
 
     }
