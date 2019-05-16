@@ -16,8 +16,14 @@ namespace Exercises
          SameFirstLast([1, 2, 3, 1]) → true
          SameFirstLast([1, 2, 1]) → true
          */
+         // true if num => 1 and element 0 and -1 are the same.
+        
         public bool SameFirstLast(int[] nums)
         {
+            if (nums.Length > 0 && nums [0] == nums [nums.Length - 1])
+
+                return true;
+            else 
             return false;
         }
 
