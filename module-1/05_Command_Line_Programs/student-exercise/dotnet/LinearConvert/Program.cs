@@ -6,7 +6,10 @@ namespace LinearConvert
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Please enter the length.");
+            Console.ReadLine();
+
+            Console.WriteLine("Is the measurement in (m)eter, or(f)eet ?");
         }
     }
 }
