@@ -1,0 +1,9 @@
+Git Cheat Sheet
+
+git status
+git pull upstream master
+git add .
+git commit -m "comment"
+git push origin master
+
+https://garryle@bitbucket.org/te-cin-cohort-5/garryle-c.git
