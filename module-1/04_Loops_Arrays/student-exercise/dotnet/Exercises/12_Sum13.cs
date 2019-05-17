@@ -18,7 +18,18 @@ namespace Exercises
          */
         public int Sum13(int[] nums)
         {
-            return 0;
+            int sum = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] != 13)
+                    sum += nums[i];
+                else if (nums[i] == 13 && i < nums.Length -1)
+                {
+                    nums[i] = 0;
+                    nums[i + 1] = 0; 
+                }
+            }
+            return sum;
         }
 
     }
