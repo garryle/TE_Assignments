@@ -17,7 +17,8 @@ namespace Exercises
          */
         public string ExtraEnd(string str)
         {
-            return null;
+            string lastTwoCharacters = str.Substring(str.Length - 2);
+            return lastTwoCharacters+lastTwoCharacters+lastTwoCharacters;
         }
     }
 }

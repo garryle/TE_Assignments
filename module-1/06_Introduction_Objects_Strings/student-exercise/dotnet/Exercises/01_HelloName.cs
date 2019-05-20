@@ -18,7 +18,7 @@ namespace Exercises
         {
             string helloStr = "Hello ";
             helloStr += name + "!";
-            return helloStr; 
+            return helloStr;
         }
 
     }
