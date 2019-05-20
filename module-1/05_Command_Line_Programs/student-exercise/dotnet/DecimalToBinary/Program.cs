@@ -6,7 +6,7 @@ namespace DecimalToBinary
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Please enter in a series of decimal values (separated by spaces): ");
         }
     }
 }
