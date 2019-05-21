@@ -17,8 +17,22 @@ namespace Exercises
         */
         public string StringX(string str)
         {
-            
-            return ""; 
+            string addString = "";
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (i == 0 || i == str.Length - 1)
+                {
+                    addString += str[i];
+                }
+                else if (str[i] != 'x')
+                {
+                    addString += str[i];
+                }
+                
+
+            }
+            return addString; 
 
         }
     }

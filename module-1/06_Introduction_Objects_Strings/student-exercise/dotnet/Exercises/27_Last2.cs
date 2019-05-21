@@ -17,7 +17,22 @@ namespace Exercises
          */
         public int Last2(string str)
         {
-            return 0;
+            if (str.Length < 2)
+                return 0;
+
+            string end = str.Substring(str.Length -2);
+            int count = 0;
+
+            for (int i = 0; i < str.Length - 2; i++)
+            {
+                string sub = str.Substring(i, 2);
+                if (sub.Equals(end))
+                {
+                    count++;
+                }
+            }
+
+            return count;
         }
     }
 }
