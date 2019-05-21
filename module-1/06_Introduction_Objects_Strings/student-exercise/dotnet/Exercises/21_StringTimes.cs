@@ -16,7 +16,10 @@ namespace Exercises
          */
         public string StringTimes(string str, int n)
         {
-            return null;
+            string stringTimes = "";
+            for (int i = 0; i < n; i++)
+                stringTimes += str;
+            return stringTimes;
         }
     }
 }
