@@ -17,7 +17,7 @@ namespace Exercises
         public string FirstHalf(string str)
         {
             int half = str.Length / 2;
-            return str.Substring(0, half);
+            return str.Substring(0, half); 
         }
     }
 }

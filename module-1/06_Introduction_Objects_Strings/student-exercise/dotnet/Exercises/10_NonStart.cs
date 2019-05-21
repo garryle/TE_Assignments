@@ -20,6 +20,6 @@ namespace Exercises
             string newStrA = a.Substring(1);
             string newStrB = b.Substring(1);
             return newStrA + newStrB;
-        }
+        } 
     }
 }

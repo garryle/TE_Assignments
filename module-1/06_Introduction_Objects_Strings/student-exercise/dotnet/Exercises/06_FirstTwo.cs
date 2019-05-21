@@ -26,6 +26,6 @@ namespace Exercises
             {
                 return str.Substring(0, 2);
             }
-        }
+        } 
     }
 }

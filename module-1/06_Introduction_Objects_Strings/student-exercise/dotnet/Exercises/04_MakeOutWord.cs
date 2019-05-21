@@ -20,7 +20,7 @@ namespace Exercises
         {
             string firstTwo = outword.Substring(0, 2);
             string lastTwo = outword.Substring(outword.Length - 2);
-            return firstTwo + word + lastTwo;
+            return firstTwo + word + lastTwo; 
         }
     }
 }

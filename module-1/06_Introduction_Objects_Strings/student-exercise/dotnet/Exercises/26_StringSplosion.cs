@@ -16,7 +16,14 @@ namespace Exercises
          */
         public string StringSplosion(string str)
         {
-            return null;
+            //create new string that's first letter, first letter second letter, first second third...
+            string splodedString = "";
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                splodedString += str.Substring(0, i + 1);
+            }
+            return splodedString;
         }
     }
 }

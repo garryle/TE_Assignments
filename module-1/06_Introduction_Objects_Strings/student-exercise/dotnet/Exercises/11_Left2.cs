@@ -19,5 +19,5 @@ namespace Exercises
         {
             return (str.Substring(2) + str.Substring(0, 2));
         }
-    }
+    } 
 }

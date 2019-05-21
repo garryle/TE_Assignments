@@ -26,5 +26,5 @@ namespace Exercises
                 return str.Substring(str.Length - 1);
             }
         }
-    }
+    } 
 }

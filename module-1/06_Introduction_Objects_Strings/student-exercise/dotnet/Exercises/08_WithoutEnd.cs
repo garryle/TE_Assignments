@@ -18,7 +18,7 @@ namespace Exercises
          */
         public string WithoutEnd(string str)
         {
-            return str = str.Substring(1, str.Length -2);
+            return str = str.Substring(1, str.Length -2); 
         }
     }
 }

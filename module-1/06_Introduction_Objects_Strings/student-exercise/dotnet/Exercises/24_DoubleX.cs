@@ -16,7 +16,18 @@ namespace Exercises
          */
         public bool DoubleX(string str)
         {
-            return false;
+            bool doubleX = false;
+
+            for (int i = 0; i<str.Length-1; i++)
+            {
+                if (str[i] == 'x')
+                {
+                    if (str[i + 1] == 'x')
+                        doubleX = true;
+                    i = str.Length;
+                }
+            }
+            return doubleX;
         }
     }
 }

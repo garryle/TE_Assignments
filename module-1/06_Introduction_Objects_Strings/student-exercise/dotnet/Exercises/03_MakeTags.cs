@@ -18,7 +18,7 @@ namespace Exercises
         */
         public string MakeTags(string tag, string word)
         {
-            return "<" + tag + ">"  + word + "</" + tag + ">";
+            return "<" + tag + ">"  + word + "</" + tag + ">"; 
         }
     }
 }

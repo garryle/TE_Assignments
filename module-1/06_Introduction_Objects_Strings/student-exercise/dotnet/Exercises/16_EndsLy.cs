@@ -19,4 +19,4 @@ namespace Exercises
             return str.EndsWith("ly") ? true : false;
         }
     }
-}
+} 
