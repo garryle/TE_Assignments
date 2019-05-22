@@ -19,10 +19,9 @@ namespace Exercises
             List<int> returnList = new List<int>();
             for (int i = 0; i < integerArray.Length; i++)
             {
-                int temp = integerArray[i];
-                if (temp / 2 != 0)
+                if (integerArray[i] % 2 == 1)
                 {
-                    returnList.Add(temp);
+                    returnList.Add(integerArray[i]);
                 }
             }
                 return returnList;

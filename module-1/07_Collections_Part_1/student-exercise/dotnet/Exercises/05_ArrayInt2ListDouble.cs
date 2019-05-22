@@ -19,8 +19,8 @@ namespace Exercises
             List<double> doubleList = new List<double>();
             foreach (double val in intArray)
             {
-                double iHalf = (val / 2);
-                doubleList.Add(iHalf);
+                double intHalf = (val / 2);
+                doubleList.Add(intHalf);
             }
             return doubleList;
         }

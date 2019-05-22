@@ -20,7 +20,40 @@ namespace Exercises
          */
         public List<int> BoardingGate(List<int> seatNumberList)
         {
-            return null;
+            //create list to return
+            List<int> allSeats = new List<int>();
+
+            //create a list for each queue
+            List<int> lowSeats = new List<int>(); // holds seats 1-10
+            List<int> midSeats = new List<int>(); // hold seats 11-20
+            List<int> highSeats = new List<int>(); // hold seats 21 - 30
+
+            //go through seat number list and put each item into appropirate queue
+            foreach (int seatNumber in seatNumberList)
+            {
+                if (seatNumber > 0 && seatNumber <= 30)
+                {
+                    if (seatNumber <= 10)
+                    {
+                        lowSeats.Add(seatNumber);
+                    }
+                    else if (seatNumber <= 20)
+                    {
+                        midSeats.Add(seatNumber);
+                    }
+                    else
+                    {
+                        highSeats.Add(seatNumber);
+                    }
+                }
+            }
+            //combine the queues back together and return
+            allSeats.AddRange(lowSeats);
+            allSeats.AddRange(midSeats);
+            allSeats.AddRange(highSeats);
+
+            return allSeats;
         }
+
     }
 }
