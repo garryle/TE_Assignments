@@ -41,8 +41,11 @@ namespace Exercises
                 interWovenList.AddRange(listOne.GetRange(smallerArraySize, numberOfItemsToAdd));
             }
             else if (smallerArraySize < listTwo.Count)
-
-            return null;
+            {
+            int numberOfItemsToAdd = listTwo.Count - smallerArraySize;
+            interWovenList.AddRange(listTwo.GetRange(smallerArraySize, numberOfItemsToAdd));
+            }
+            return interWovenList;
         }
     }
 }

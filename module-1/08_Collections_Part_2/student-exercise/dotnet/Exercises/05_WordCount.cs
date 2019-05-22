@@ -22,6 +22,12 @@ namespace Exercises
          */
         public Dictionary<string, int> WordCount(string[] words)
         {
+            //create an empty list to return
+            Dictionary<string, int> wordCountStrings = new Dictionary<string, int>();
+
+            //create a hashset for of values we've added
+            HashSet<string> alreadyAdded = new HashSet<string>();
+
             return null;
         }
     }
