@@ -24,7 +24,17 @@ namespace Exercises
             //create loop
             foreach (string word in words)
             {
-                bandE[word] 
+                string firstLetter = word.Substring(0, 1);
+                string lastLetter = word.Substring(word.Length - 1);
+
+                if (bandE.ContainsKey(firstLetter)) 
+                    {
+                    bandE[firstLetter] = lastLetter;
+                    }
+                else
+                    {
+                    bandE.Add(firstLetter, lastLetter);
+                    }
             }
             return bandE;
         }
