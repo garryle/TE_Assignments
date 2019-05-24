@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace TechElevator.Classes
 {
+
+
     /// <summary>
     /// Represents a "simple" calculator
     /// </summary>
     public class Calculator
     {
-        private int Result { get; set; }
+        public int Result { get; private set; }
 
         //methods
         public Calculator()
@@ -24,7 +26,7 @@ namespace TechElevator.Classes
             this.Result = Result;
         }
 
-        public int getResult()
+        public int GetResult()
         {
             return Result;
         }
