@@ -22,13 +22,21 @@ namespace Exercises
          */
         public Dictionary<string, int> WordCount(string[] words)
         {
-            //create an empty list to return
-            Dictionary<string, int> wordCountStrings = new Dictionary<string, int>();
+            Dictionary<string, int> wordCount = new Dictionary<string, int>();
 
-            //create a hashset for of values we've added
-            HashSet<string> alreadyAdded = new HashSet<string>();
-
-            return null;
+            foreach (string word in words)
+            {
+                if (!wordCount.ContainsKey(word))
+                {
+                    wordCount[word] = (1);
+                }
+                else
+                {
+                    int num = wordCount[word];
+                    wordCount[word] = ++num;
+                }
+            }
+            return wordCount;
         }
     }
 }

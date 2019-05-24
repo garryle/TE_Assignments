@@ -19,7 +19,30 @@ namespace Exercises
          */
         public Dictionary<string, bool> WordMultiple(string[] words)
         {
-            return null;
+            //create an empty list to return
+            Dictionary<string, bool> hashMultiples = new Dictionary<string, bool>();
+
+            //create a hash to see if letter is already in
+            HashSet<string> alreadyAdded = new HashSet<string>();
+
+            //loop thorugh words
+            foreach (string word in words)
+            {
+                //check if the string is in hash multiples
+                if (hashMultiples.ContainsKey(word))
+                {
+                    hashMultiples[word] = true;
+                }
+                //if it is, then set value to true
+                else
+                {//else false
+                    hashMultiples[word] = false;
+                }
+
+                }
+
+
+            return hashMultiples;
         }
     }
 }

@@ -21,7 +21,22 @@ namespace Exercises
          */
         public Dictionary<int, int> IntCount(int[] ints)
         {
-            return null;
+            //create an empty list to return
+            Dictionary<int, int> intCount = new Dictionary<int, int>();
+
+            foreach (int myInt in ints)
+            {
+                if (!intCount.ContainsKey(myInt))
+                {
+                    intCount[myInt] = (1);
+                }
+                else
+                {
+                    int num = intCount[myInt];
+                    intCount[myInt] = ++num;
+                }
+            }
+            return intCount;
         }
     }
 }

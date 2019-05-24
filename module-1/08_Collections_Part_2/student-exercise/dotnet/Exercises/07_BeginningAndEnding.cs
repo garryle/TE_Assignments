@@ -18,7 +18,15 @@ namespace Exercises
          */
         public Dictionary<string, string> BeginningAndEnding(string[] words)
         {
-            return null;
+            //create an empty list to return
+            Dictionary<string, string> bandE = new Dictionary<string, string>();
+
+            //create loop
+            foreach (string word in words)
+            {
+                bandE[word] 
+            }
+            return bandE;
         }
     }
 }
