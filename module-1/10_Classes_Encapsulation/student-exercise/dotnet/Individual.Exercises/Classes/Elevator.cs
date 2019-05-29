@@ -14,8 +14,9 @@ namespace Individual.Exercises.Classes
         public int NumberOfLevels { get; }
 
         //Constructors
-        Elevator(int numberOfLevels)
+        public Elevator(int numberOfLevels)
         {
+            CurrentLevel = 1;
             NumberOfLevels = numberOfLevels;
         }
 
@@ -33,33 +34,17 @@ namespace Individual.Exercises.Classes
 
         public void GoUp(int desiredFloor)
         {
-            if (DoorIsOpen == true)
-            {
-                CurrentLevel = CurrentLevel;
-            }
-            else if (DoorIsOpen == false && CurrentLevel <= desiredFloor)
+            if (!DoorIsOpen && desiredFloor <= NumberOfLevels && desiredFloor > CurrentLevel)
             {
                 CurrentLevel = desiredFloor;
-            }
-            else
-            {
-                CurrentLevel = CurrentLevel;
             }
         }
 
         public void GoDown(int desiredFloor)
         {
-            if (DoorIsOpen == true)
-            {
-                CurrentLevel = CurrentLevel;
-            }
-            else if (DoorIsOpen == false && desiredFloor >= 1)
+            if (!DoorIsOpen && desiredFloor < CurrentLevel && desiredFloor >= 1)
             {
                 CurrentLevel = desiredFloor;
-            }
-            else
-            {
-                CurrentLevel = CurrentLevel;
             }
         }
     }
