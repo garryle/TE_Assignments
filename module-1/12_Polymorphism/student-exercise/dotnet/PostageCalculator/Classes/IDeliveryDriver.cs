@@ -7,8 +7,6 @@ namespace PostageCalculator.Classes
     public interface IDeliveryDriver
     {
         string Name { get; }
-
-        //Method
         double CalculateRate(int distance, double weight);
     }
 }

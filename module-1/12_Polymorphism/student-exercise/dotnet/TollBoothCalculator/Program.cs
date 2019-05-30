@@ -9,7 +9,7 @@ namespace TollBoothCalculator
         static void Main(string[] args)
         {
             List<IVehicle> vehicleList = new List<IVehicle>();
-
+   
             vehicleList.Add(new Car(false));
             vehicleList.Add(new Car(true));
             vehicleList.Add(new Tank());
