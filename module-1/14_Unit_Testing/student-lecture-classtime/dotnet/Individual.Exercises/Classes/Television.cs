@@ -46,7 +46,7 @@ namespace Individual.Exercises.Classes
         /// <param name="newChannel">new channel to turn to</param>        
         public void ChangeChannel(int newChannel)
         {
-            if (IsOn && newChannel > 3 && newChannel < 18)
+            if (IsOn && newChannel >= 3 && newChannel <= 18)
             {
                 CurrentChannel = newChannel;
             }
