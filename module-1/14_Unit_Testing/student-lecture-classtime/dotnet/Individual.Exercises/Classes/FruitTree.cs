@@ -36,6 +36,14 @@ namespace Individual.Exercises.Classes
         /// <returns>True if there is enough fruit to pick, false if not.</returns>
         public bool PickFruit(int numberOfPiecesToRemove)
         {
+            string s = "abc";
+            int m;
+            while (!int.TryParse(s, out m))
+            {
+                //keep bugging the user for valid data
+            }
+            //go ahead and use m as an int
+
             if (this.PiecesOfFruitLeft - numberOfPiecesToRemove >= 0)
             {
                 this.PiecesOfFruitLeft -= numberOfPiecesToRemove;
