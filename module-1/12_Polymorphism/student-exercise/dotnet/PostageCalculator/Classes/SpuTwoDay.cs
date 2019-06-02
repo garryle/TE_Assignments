@@ -4,21 +4,19 @@ using System.Text;
 
 namespace PostageCalculator.Classes
 {
-    class SpuTwoDay : IDeliveryDriver
+    public class SpuTwoDay : IDeliveryDriver
     {
-        private string Name = "SPU (2-Day Business)\t";
-        string IDeliveryDriver.Name
-        {
-            get
-            {
-                return "SPU (2-Day Business)\t";
-            }
-        }
+        public string Name { get; }
 
         public double CalculateRate(int distance, double weight)
         {
-            double rate = (weight * 0.050) * distance;
+            double rate = 0;
+            rate = (weight * 0.050) * distance;
             return rate;
+        }
+        public override string ToString()
+        {
+            return "SPU(2-Day Business)     ";
         }
     }
 }

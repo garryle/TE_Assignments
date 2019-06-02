@@ -24,7 +24,7 @@ namespace TollBoothCalculator.Classes
 
             if (HasTrailer)
             {
-                toll = toll + 1.00;
+                toll = (distance * 0.020) + 1.00;
             }
             else if (!HasTrailer)
             {

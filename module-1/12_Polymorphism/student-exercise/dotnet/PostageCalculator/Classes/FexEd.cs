@@ -6,15 +6,7 @@ namespace PostageCalculator.Classes
 {
     class FexEd : IDeliveryDriver
     {
-        private string Name = "FexEd\t\t\t";
-
-        string IDeliveryDriver.Name
-        {
-            get
-            {
-                return "FexEd\t\t\t";
-            }
-        }
+        public string Name { get; }
 
         public double CalculateRate(int distance, double weight)
         {
@@ -37,5 +29,11 @@ namespace PostageCalculator.Classes
             }
             return rate;
         }
+
+        public override string ToString()
+        {
+            return "FexEd                        ";
+        }
     }
+
 }

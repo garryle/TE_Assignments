@@ -7,17 +7,10 @@ namespace PostageCalculator.Classes
     public class FirstClass : IDeliveryDriver
     {
         //Implementation
-        private string Name = "Postal Service (1st Class)";
         private double rate;
         private int distace;
 
-        string IDeliveryDriver.Name
-        {
-            get
-            {
-                return "Postal Service (1st Class)";
-            }
-        }
+        public string Name { get; }
 
         public double CalculateRate(int distance, double weight)
         {
@@ -46,6 +39,12 @@ namespace PostageCalculator.Classes
                 rate = 0.500;
             }
             return distance * rate;
+        }
+
+
+        public override string ToString()
+        {
+            return "Postal Service (1st Class)";
         }
     }
 }

@@ -32,13 +32,17 @@ namespace PostageCalculator
             drivers.Add(new SpuTwoDay());
             drivers.Add(new SpuNextDay());
 
-            Console.WriteLine("Delivery Method \t\t " + "$ cost");
-            Console.WriteLine("--------------------------------------");
+            Console.WriteLine("Delivery Method \t\t\t " + "$ cost");
+            Console.WriteLine("------------------------------------------------");
+
             foreach (IDeliveryDriver driver in drivers)
             {
+               double  cost = driver.CalculateRate(distance, weight);
 
-                Console.ReadLine();
+                Console.WriteLine($"{driver.ToString()}\t\t{string.Format("{0:0.00}", cost)}");
             }
+
+            Console.ReadLine();
         }
     }
 }
