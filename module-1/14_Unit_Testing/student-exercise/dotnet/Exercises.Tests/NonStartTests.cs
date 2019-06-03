@@ -14,15 +14,19 @@ namespace Exercises.Tests
 
     public class NonStartTests
     {
+        NonStart nonStartTest = new NonStart();
+
         [DataRow("Hello", "There", "ellohere")]
         [DataRow("java", "code", "avaode")]
-        [DataRow("shot1", "java", "hotlava")]
+        [DataRow("shotl", "java", "hotlava")]
 
         [DataTestMethod]
 
         public void NonStartTest(string string1, string string2, string output)
         {
-
+            Assert.AreEqual("ellohere", nonStartTest.GetPartialString("Hello", "There"));
+            Assert.AreEqual("avaode", nonStartTest.GetPartialString("java", "code"));
+            Assert.AreEqual("hotlava", nonStartTest.GetPartialString("shotl", "java"));
         }
     }
 }

@@ -3,26 +3,26 @@
 namespace Exercises.Tests
 {
     /*
-    Given 2 strings, return their concatenation, except omit the first char of each. The strings will 
-    be at least length 1.
-    GetPartialString("Hello", "There") → "ellohere"
-    GetPartialString("java", "code") → "avaode"	
-    GetPartialString("shotl", "java") → "hotlava"	
-    */
+     Given an array of ints, return true if the array is length 1 or more, and the first element and
+     the last element are equal.
+     IsItTheSame([1, 2, 3]) → false
+     IsItTheSame([1, 2, 3, 1]) → true
+     IsItTheSame([1, 2, 1]) → true
+     */
 
     [TestClass]
 
     public class SameFirstLastTests
     {
-        [DataRow("Hello", "There", "ellohere")]
-        [DataRow("java", "code", "avaode")]
-        [DataRow("shot1", "java", "hotlava")]
+        SameFirstLast sameFirstLastTest = new SameFirstLast();
 
         [DataTestMethod]
 
-        public void NonStartTest(string string1, string string2, string output)
+        public void SameFirstLastTest()
         {
-
+            Assert.AreEqual(false, sameFirstLastTest.IsItTheSame(new int[] { 1, 2, 3 }));
+            Assert.AreEqual(true, sameFirstLastTest.IsItTheSame(new int[] { 1, 2, 3, 1}));
+            Assert.AreEqual(true, sameFirstLastTest.IsItTheSame(new int[] { 1, 2, 1 }));
         }
     }
 }

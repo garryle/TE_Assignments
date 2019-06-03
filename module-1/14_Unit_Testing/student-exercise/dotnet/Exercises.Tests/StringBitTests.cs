@@ -3,26 +3,25 @@
 namespace Exercises.Tests
 {
     /*
-    Given 2 strings, return their concatenation, except omit the first char of each. The strings will 
-    be at least length 1.
-    GetPartialString("Hello", "There") → "ellohere"
-    GetPartialString("java", "code") → "avaode"	
-    GetPartialString("shotl", "java") → "hotlava"	
-    */
+     Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+     GetBits("Hello") → "Hlo"	
+     GetBits("Hi") → "H"	
+     GetBits("Heeololeo") → "Hello"	
+     */
 
     [TestClass]
 
     public class StringBitTests
     {
-        [DataRow("Hello", "There", "ellohere")]
-        [DataRow("java", "code", "avaode")]
-        [DataRow("shot1", "java", "hotlava")]
+        StringBits stringBitTest = new StringBits();
 
         [DataTestMethod]
 
-        public void NonStartTest(string string1, string string2, string output)
+        public void StringBitTest()
         {
-
+            Assert.AreEqual("Hlo", stringBitTest.GetBits("Hello"));
+            Assert.AreEqual("H", stringBitTest.GetBits("Hi"));
+            Assert.AreEqual("Hello", stringBitTest.GetBits("Heeololeo"));
         }
     }
 }
