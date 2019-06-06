@@ -7,7 +7,7 @@ namespace FizzWriter
     {
         static void Main(string[] args)
         {
-            string directory = Environment.CurrentDirectory;
+            string directory = $@"{Environment.CurrentDirectory}\..\..\..\..";
             string fileName = "FizzBuzz.txt";
             string fullPath = Path.Combine(directory, fileName);
 
@@ -38,7 +38,7 @@ namespace FizzWriter
             }
             catch (Exception e)
             {
-                Console.WriteLine("Unable to write to File");
+                Console.WriteLine("Unable to create file.");
                 Console.WriteLine(e.Message);
             }
         }

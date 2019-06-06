@@ -10,7 +10,7 @@ namespace PostageCalculator.Classes
 
         public double CalculateRate(int distance, double weight)
         {
-            double rate = (weight * 0.005) * distance;
+            double rate = (weight * 0.0050) * distance;
 
             return rate;
         }
