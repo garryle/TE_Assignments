@@ -11,11 +11,11 @@ namespace Lecture
     {
         static void Main(string[] args)
         {
-            //ReadingInFiles.ReadACharacterFile();
+            ReadingInFiles.ReadACharacterFile();
             //ReadingCSVFiles.ReadFile();
             //SummingUpNumbers.ReadFile(); 
             //FileAndDirectories.UsingTheDirectoryClass(); 
-            FileAndDirectories.UsingTheFileClass();
+            //FileAndDirectories.UsingTheFileClass();
 
             Console.ReadLine();
 
