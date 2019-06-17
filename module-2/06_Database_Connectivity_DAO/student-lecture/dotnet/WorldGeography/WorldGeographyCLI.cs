@@ -33,14 +33,14 @@ namespace WorldGeography
 
         public void RunCLI()
         {
-            PrintHeader();
-            PrintMenu();
-
-            while (true)
+            bool exit = false;
+            while (!exit)
             {
-                string command = Console.ReadLine();
-
                 Console.Clear();
+                PrintHeader();
+                PrintMenu();
+
+                string command = Console.ReadLine();
 
                 switch (command.ToLower())
                 {
@@ -74,14 +74,13 @@ namespace WorldGeography
 
                     case Command_Quit:
                         Console.WriteLine("Thank you for using the world geography cli app");
-                        return;
+                        exit = true;
+                        break;
 
                     default:
                         Console.WriteLine("The command provided was not a valid command, please try again.");
                         break;
                 }
-
-                PrintMenu();
             }
         }
 
@@ -132,6 +131,8 @@ namespace WorldGeography
             cityDAO.AddCity(city);
 
             Console.WriteLine("City added.");
+            Console.WriteLine("Press and key to continue...");
+            Console.ReadKey();
         }
 
 
@@ -146,6 +147,9 @@ namespace WorldGeography
             {
                 Console.WriteLine(index + " - " + countries[index]);
             }
+
+            Console.WriteLine("Press and key to continue...");
+            Console.ReadKey();
         }
 
 
@@ -163,6 +167,9 @@ namespace WorldGeography
             {
                 Console.WriteLine(country);
             }
+
+            Console.WriteLine("Press and key to continue...");
+            Console.ReadKey();
         }
 
 
@@ -180,6 +187,9 @@ namespace WorldGeography
             {
                 Console.WriteLine(city);
             }
+
+            Console.WriteLine("Press and key to continue...");
+            Console.ReadKey();
         }
 
         private void AddNewLanguage()
@@ -197,16 +207,18 @@ namespace WorldGeography
                 Name = name
             };
 
-            bool result = languageDAO.AddNewLanguage(lang);
+            try
+            {
+                languageDAO.AddNewLanguage(lang);
+                Console.WriteLine("The new language was inserted.");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
-            if (result)
-            {
-                Console.WriteLine("Success!");
-            }
-            else
-            {
-                Console.WriteLine("The new language was not inserted");
-            }
+            Console.WriteLine("Press and key to continue...");
+            Console.ReadKey();
         }
 
         private void RemoveLanguage()
@@ -230,6 +242,9 @@ namespace WorldGeography
             {
                 Console.WriteLine("The language was not found or removed.");
             }
+
+            Console.WriteLine("Press and key to continue...");
+            Console.ReadKey();
         }
 
         private void GetLanguagesForCountry()
@@ -245,6 +260,9 @@ namespace WorldGeography
             {
                 Console.WriteLine(language);
             }
+
+            Console.WriteLine("Press and key to continue...");
+            Console.ReadKey();
         }
     }
 }

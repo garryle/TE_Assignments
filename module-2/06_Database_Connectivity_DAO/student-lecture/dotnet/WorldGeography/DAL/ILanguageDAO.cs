@@ -19,7 +19,7 @@ namespace WorldGeography.DAL
         /// </summary>
         /// <param name="newLanguage"></param>
         /// <returns></returns>
-        bool AddNewLanguage(Language newLanguage);
+        string AddNewLanguage(Language newLanguage);
 
         /// <summary>
         /// Removes an existing language.
