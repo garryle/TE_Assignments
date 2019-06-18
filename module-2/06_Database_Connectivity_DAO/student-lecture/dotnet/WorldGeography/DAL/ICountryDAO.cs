@@ -19,5 +19,7 @@ namespace WorldGeography.DAL
         /// <param name="continent">The continent to filter by.</param>
         /// <returns></returns>
         IList<Country> GetCountries(string continent);
+
+        bool UpdateCountry(Country item);
     }
 }

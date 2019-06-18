@@ -23,7 +23,8 @@ namespace VndrCLI
             //var db = new VendingDBService(connectionString);
             var db = new MockVendingDBService();
 
-            var log = new LogFileService();
+            //var log = new LogFileService();
+            var log = new LogDBService(connectionString);
             VendingMachine vm = new VendingMachine(db, log);
             VndrCLI cli = new VndrCLI(vm);
             cli.Run();                        

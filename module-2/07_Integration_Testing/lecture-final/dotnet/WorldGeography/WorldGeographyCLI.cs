@@ -19,28 +19,23 @@ namespace WorldGeography
         const string Command_AddCity = "7";
         const string Command_Quit = "q";
 
-        private ICityDAO cityDAO;
-        private ICountryDAO countryDAO;
-        private ILanguageDAO languageDAO;
+        private IWorldDAO _db = null;
 
-
-        public WorldGeographyCLI(ICityDAO cityDAO, ICountryDAO countryDAO, ILanguageDAO languageDAO)
+        public WorldGeographyCLI(IWorldDAO db)
         {
-            this.cityDAO = cityDAO;
-            this.languageDAO = languageDAO;
-            this.countryDAO = countryDAO;
+            _db = db;
         }
 
         public void RunCLI()
         {
-            bool exit = false;
-            while (!exit)
-            {
-                Console.Clear();
-                PrintHeader();
-                PrintMenu();
+            PrintHeader();
+            PrintMenu();
 
+            while (true)
+            {
                 string command = Console.ReadLine();
+
+                Console.Clear();
 
                 switch (command.ToLower())
                 {
@@ -74,13 +69,14 @@ namespace WorldGeography
 
                     case Command_Quit:
                         Console.WriteLine("Thank you for using the world geography cli app");
-                        exit = true;
-                        break;
+                        return;
 
                     default:
                         Console.WriteLine("The command provided was not a valid command, please try again.");
                         break;
                 }
+
+                PrintMenu();
             }
         }
 
@@ -128,17 +124,15 @@ namespace WorldGeography
                 Population = population
             };
 
-            cityDAO.AddCity(city);
+            _db.AddCity(city);
 
             Console.WriteLine("City added.");
-            Console.WriteLine("Press and key to continue...");
-            Console.ReadKey();
         }
 
 
         private void GetCountries()
         {
-            IList<Country> countries = countryDAO.GetCountries();
+            IList<Country> countries = _db.GetCountries();
 
             Console.WriteLine();
             Console.WriteLine("Printing all of the countries");
@@ -147,9 +141,6 @@ namespace WorldGeography
             {
                 Console.WriteLine(index + " - " + countries[index]);
             }
-
-            Console.WriteLine("Press and key to continue...");
-            Console.ReadKey();
         }
 
 
@@ -158,7 +149,7 @@ namespace WorldGeography
         {
             string continent = CLIHelper.GetString("Continent to filter by:");
 
-            IList<Country> northAmericanCountries = countryDAO.GetCountries(continent);
+            IList<Country> northAmericanCountries = _db.GetCountries(continent);
 
             Console.WriteLine();
             Console.WriteLine("All North American Countries");
@@ -167,9 +158,6 @@ namespace WorldGeography
             {
                 Console.WriteLine(country);
             }
-
-            Console.WriteLine("Press and key to continue...");
-            Console.ReadKey();
         }
 
 
@@ -178,7 +166,7 @@ namespace WorldGeography
         {
             string countryCode = CLIHelper.GetString("Enter the country code that you want to retrieve:");
 
-            IList<City> cities = cityDAO.GetCitiesByCountryCode(countryCode);
+            IList<City> cities = _db.GetCitiesByCountryCode(countryCode);
 
             Console.WriteLine();
             Console.WriteLine($"Printing {cities.Count} cities for {countryCode}");
@@ -187,9 +175,6 @@ namespace WorldGeography
             {
                 Console.WriteLine(city);
             }
-
-            Console.WriteLine("Press and key to continue...");
-            Console.ReadKey();
         }
 
         private void AddNewLanguage()
@@ -207,18 +192,7 @@ namespace WorldGeography
                 Name = name
             };
 
-            try
-            {
-                languageDAO.AddNewLanguage(lang);
-                Console.WriteLine("The new language was inserted.");
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            Console.WriteLine("Press and key to continue...");
-            Console.ReadKey();
+            _db.AddNewLanguage(lang);
         }
 
         private void RemoveLanguage()
@@ -232,7 +206,7 @@ namespace WorldGeography
                 Name = language
             };
 
-            bool result = languageDAO.RemoveLanguage(lang);
+            bool result = _db.RemoveLanguage(lang);
 
             if (result)
             {
@@ -242,16 +216,13 @@ namespace WorldGeography
             {
                 Console.WriteLine("The language was not found or removed.");
             }
-
-            Console.WriteLine("Press and key to continue...");
-            Console.ReadKey();
         }
 
         private void GetLanguagesForCountry()
         {
             string countryCode = CLIHelper.GetString("Enter the country code you want to retrieve:");            
 
-            IList<Language> languages = languageDAO.GetLanguages(countryCode);
+            IList<Language> languages = _db.GetLanguages(countryCode);
 
             Console.WriteLine();
             Console.WriteLine($"Printing {languages.Count} languages for {countryCode}");
@@ -260,9 +231,6 @@ namespace WorldGeography
             {
                 Console.WriteLine(language);
             }
-
-            Console.WriteLine("Press and key to continue...");
-            Console.ReadKey();
         }
     }
 }
