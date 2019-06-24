@@ -97,6 +97,19 @@ namespace DataSecurity.Cli
             {
                 _userMgr.LoginUser(username, password);
                 Console.WriteLine($"Welcome {_userMgr.User.FirstName} {_userMgr.User.LastName}");
+                if(_userMgr.Permission.IsStandardUser)
+                {
+                    Console.WriteLine("You are a standard user dude.");
+                }
+                else if(_userMgr.Permission.IsAdministrator)
+                {
+                    Console.WriteLine("You are an administrator, I want to be you when I grow up.");
+                }
+                else
+                {
+                    Console.WriteLine("Get out hacker!!");
+                    _userMgr.LogoutUser();
+                }
                 Console.ReadKey();
             }
             catch (Exception ex)
