@@ -1,72 +1,101 @@
 :root {
-    --top-row-height: 120px;
-    --gutter: 20px;
-    --blue: #00adee;
-    --light-blue: rgba(0, 173, 238, 0.4);
-    --green: #8cc36f;
-    --light-green: rgba(170, 239, 135, 0.8);  
-    --bg-color: rgba(192, 192, 192, 0.1);
-    --subheading: rgba(0, 0, 0, 0.6);
-  }
-  
-  * {
-    box-sizing: border-box;
-    font-family: Tahoma, Verdana, Segoe, sans-serif;
-  }
-  
-  main img 
-  {
-    max-width: auto;
-    height: 0px;
-  }
+  --top-row-height: 120px;
+  --gutter: 20px;
+  --blue: #00adee;
+  --light-blue: rgba(0, 173, 238, 0.4);
+  --green: #8cc36f;
+  --light-green: rgba(170, 239, 135, 0.8);  
+  --bg-color: rgba(192, 192, 192, 0.1);
+  --subheading: rgba(0, 0, 0, 0.6);
+}
 
-  h2 
-  {
-    color: var(--light-green);
-  }
-  aside
-  {
-    border: 1px solid black;
-    display: inline-block;
-    position: fixed;
-    width: 200px;
-    text-align: center;
-  }
+* {
+  box-sizing: border-box;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
 
-  aside img 
-  {
-    max-width: auto;
-    height: 150px;
-  }
-  
-  aside ul 
-  {
-    text-align: center;
-    list-style-type: none;
-    text-decoration: none;
-    display: inline;
-  }
+main {
+  margin-left: 200px;
+  padding-left: 1%;
+  padding-right: 1%;
+}
 
-  aside a 
-  {
-    text-decoration: none;
-    color: var(--blue);
-  }
+main img 
+{
+  max-width: 100%;
+  height: auto;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+h2 {
+  color: var(--light-green);
+}
+
+aside {
+  border-right: 1px solid #00adee;
+  display: inline-block;
+  position: fixed;
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 100%;
+}
+
+aside ul {
+  list-style-type: none;
+  text-decoration: none;
+  display: inline;
+}
+
+aside a {
+  border-bottom: 1px solid #00adee;
+  text-decoration: none;
+  color: var(--blue);
+}
   
-header img
+aside img {
+  max-width: auto;
+  height: 150px;
+}
+
+header img 
 {
   max-width: auto;
   height: 150px;
 }
 
-main 
-{
-  border: 1px solid blue;
-    margin-left: 200px;
-}
-
-header p 
-{
+header p {
   display: none;
 }
+
+#what-we-do{
+border-right: 1px solid var(--green);
+display: inline-block;
+height: auto;
+width: 33%;
+padding-right: 1%;
+}
+
+#our-work{
+border-right: 1px solid var(--green);
+display: inline-block;
+height: auto;
+width: 33%;
+padding-right: 1%;
+padding-left: 1%;
+}
+
+#contact-us{
+display: inline-block;
+height: auto;
+width: 33%;
+padding-left: 1%;
+}
+
+#social {
+display: none;
+}
+
   
