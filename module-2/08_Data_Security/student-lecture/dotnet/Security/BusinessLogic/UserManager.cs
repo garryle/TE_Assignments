@@ -102,13 +102,13 @@ namespace Security.BusinessLogic
             }
             catch (Exception)
             {
-                throw new Exception("Either the username or the password is invalid.");
+                throw new UserDoesNotExistException("Either the username or the password is invalid.");
             }
 
             Authentication auth = new Authentication(password, user.Salt);
             if (!auth.Verify(user.Hash))
             {
-                throw new Exception("Either the username or the password is invalid.");
+                throw new PasswordMatchException("Either the username or the password is invalid.");
             }
 
             Permission = new Authorization(user);
