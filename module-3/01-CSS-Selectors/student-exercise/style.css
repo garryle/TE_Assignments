@@ -14,4 +14,59 @@
     font-family: Tahoma, Verdana, Segoe, sans-serif;
   }
   
+  main img 
+  {
+    max-width: auto;
+    height: 0px;
+  }
+
+  h2 
+  {
+    color: var(--light-green);
+  }
+  aside
+  {
+    border: 1px solid black;
+    display: inline-block;
+    position: fixed;
+    width: 200px;
+    text-align: center;
+  }
+
+  aside img 
+  {
+    max-width: auto;
+    height: 150px;
+  }
+  
+  aside ul 
+  {
+    text-align: center;
+    list-style-type: none;
+    text-decoration: none;
+    display: inline;
+  }
+
+  aside a 
+  {
+    text-decoration: none;
+    color: var(--blue);
+  }
+  
+header img
+{
+  max-width: auto;
+  height: 150px;
+}
+
+main 
+{
+  border: 1px solid blue;
+    margin-left: 200px;
+}
+
+header p 
+{
+  display: none;
+}
   
