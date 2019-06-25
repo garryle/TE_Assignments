@@ -28,6 +28,16 @@ main img
   padding-bottom: 1%;
 }
 
+header img 
+{
+  max-width: auto;
+  height: 150px;
+}
+
+header p {
+  display: none;
+}
+
 h2 {
   color: var(--light-green);
 }
@@ -40,7 +50,7 @@ aside {
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
-  padding-bottom: 100%;
+  padding-bottom: 22%;
 }
 
 aside ul {
@@ -64,16 +74,6 @@ aside a {
 aside img {
   max-width: auto;
   height: 150px;
-}
-
-header img 
-{
-  max-width: auto;
-  height: 150px;
-}
-
-header p {
-  display: none;
 }
 
 #what-we-do{
