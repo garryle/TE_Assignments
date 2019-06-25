@@ -49,8 +49,14 @@ aside ul {
   display: inline;
 }
 
+aside ul li {
+  border-bottom: 1px solid rgba(0, 173, 238, 0.4);
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  }
+
 aside a {
-  border-bottom: 1px solid #00adee;
   text-decoration: none;
   color: var(--blue);
 }
