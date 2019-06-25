@@ -17,6 +17,7 @@ p {
 }
 #box_1_1, #box_2_1, #box_3_1 {
   background: #ee3e64;
+  display: inline-block;
 }
 #box_1_2, #box_2_2, #box_3_2, #fixed {
   background: #44accf;
@@ -33,7 +34,7 @@ p {
   position: relative;
 }
 #box_3_2 {
-  position: absolute;;
+  position: absolute;
   top: 100px;
   left: 300px;
 }
