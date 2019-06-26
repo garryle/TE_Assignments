@@ -4,13 +4,62 @@
     int number = Convert.ToInt32(ViewData["number"]);
 }
 
-<h2>FizzBuzz</h2>
+@functions
+{
+    public List<string> FizzBuzzList(int number)
+    {
+        List<string> output = new List<string>();
+        for (int i = 1; i <= number; i++)
+            if (i % 3 == 0 && i % 5 == 0)
+            {
+                output.Add("FizzBuzz");
+            }
+            else if (i % 3 == 0)
+            {
+                output.Add("Fizz");
+            }
+            else if (i % 5 == 0)
+            {
+                output.Add("Buzz");
+            }
+            else
+            {
+                string intAsString = i.ToString();
+                output.Add(intAsString);
+            }
+        return output;
+    }
+}
 
-<!-- Example navigation for part 2 of exercise. -->
-<nav>
-    <ul>
-        <li><a asp-controller="Home" asp-action="FizzBuzz" asp-route-number="20">20</a></li>
-        <li><a asp-controller="Home" asp-action="FizzBuzz" asp-route-number="50">50</a></li>
-    </ul>
-</nav>
+            <h2>FizzBuzz</h2>
 
+            <!-- Example navigation for part 2 of exercise. -->
+            <nav>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="FizzBuzz" asp-route-number="20">20</a></li>
+                    <li><a asp-controller="Home" asp-action="FizzBuzz" asp-route-number="50">50</a></li>
+                    <li><a asp-controller="Home" asp-action="FizzBuzz" asp-route-number="100">100</a></li>
+                </ul>
+            </nav>
+ 
+            <main>
+                @foreach (string output in FizzBuzzList(number))
+                {
+                    if (output == "Fizz")
+                    {
+                        <h2 class="Fizz"> @output  </h2>
+                    }
+                    else if (output == "Buzz")
+                    {
+                        <h2 class="Buzz"> @output  </h2>
+                    }
+                    else if (output == "FizzBuzz")
+                    {
+                        <h2 class="FizzBuzz"> @output  </h2>
+                    }
+                    else
+                    {
+                        <h2> @output </h2>
+                    }
+                }
+            </main>

@@ -1,5 +1,10 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
+
+html {
+    font-size: 20px;
+}
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -19,4 +24,15 @@ nav ul li {
     color: #000000;
 }
 
+.Fizz {
+    color: blue;
+}
 
+.Buzz {
+    color: red;
+}
+
+.FizzBuzz {
+    color: #228b22;
+    font-size: 40px;
+}
