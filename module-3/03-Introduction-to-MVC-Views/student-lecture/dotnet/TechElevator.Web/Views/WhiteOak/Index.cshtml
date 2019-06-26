@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "White Oak";
+
+    Layout = "~/Views/Shared/_WhiteOakLayout.cshtml";
+
+    string kristian = "Thanks for spelling my name right.";
+
+    string data = (ViewData["Test"] + ViewBag.Test);
+
+    bool isTrue = false;
+}
+
+@functions {
+
+    string Bob()
+    {
+        return "Bob";
+    }
+
+}
+
+<h1>@kristian</h1>
+@if (isTrue)
+{
+    <h2>@data</h2>
+}
+else
+{
+    for (int i = 0; i < 10; i++)
+    {
+        //C# comments
+        <div>@Bob()</div>
+        @*<div>html comment</div>*@
+    }
+}
+

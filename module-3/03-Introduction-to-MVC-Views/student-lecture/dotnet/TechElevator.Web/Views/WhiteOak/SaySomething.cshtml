@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewData["Title"] = "Message Me";
+    Layout = "~/Views/Shared/_WhiteOakLayout.cshtml";
+}
+
+@for (int i = 0; i < ViewBag.Times; i++)
+{
+<h1>@ViewBag.Message</h1>
+}
+
