@@ -10,5 +10,67 @@
 
 html {
     font-size: 16px;
+    margin-right: 8%;
+    margin-left: 8%;
 }
+
+#te-logo{
+    width: 20%;
+}
+
+h1 {
+    font-size: 320%;
+    color: var(--grey);
+}
+
+h2 {
+    color: var(--grey);
+}
+
+h3 {
+    color: var(--blue);
+}
+
+main img {
+    border-radius: 100%;
+}
+
+#student-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "quote quote pic"
+    "profile profile contact"
+    "exp exp exp"
+}
+
+#student-quote {
+    grid-area: quote;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 95%;
+  }
+
+#student-profile {
+    grid-area: profile;
+}
+
+#student-contact {
+    grid-area: contact;
+    text-align: center;
+    color: var(--grey);
+    font-style: italic;
+}
+#experience {
+    grid-area: exp;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#experience > div {
+    width: 30%;
+}
+
 
