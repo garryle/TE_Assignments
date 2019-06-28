@@ -1,0 +1,15 @@
+﻿@section StyleSheet {
+    <link href="~/css/chris.css" rel="stylesheet" />
+}
+
+@section Title {
+    Chris
+}
+
+<div class="lee">I'm Chris <span>@Model</span></div>
+
+@{
+    string name = "Chris Rupp";
+}
+
+<partial name="_Footer" model="name" />

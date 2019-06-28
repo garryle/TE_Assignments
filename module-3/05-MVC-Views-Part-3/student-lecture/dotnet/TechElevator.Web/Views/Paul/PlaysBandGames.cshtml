@@ -1,0 +1,19 @@
+﻿@model string
+
+@section Title {
+    Paul
+}
+
+<a href="@Model">Paul's Awesome Video</a>
+
+<br />
+
+@Html.ActionLink("Chris", "ChrisPlaysVideoGames", "Paul", new { link = "Cool Dude" })
+@Html.ActionLink("Lee", "LeePlaysGuildWarsToo", "Paul", new { link = "Fine Lady" })
+
+<br />
+
+<a asp-controller="Paul" asp-action="ChrisPlaysVideoGames" asp-route-link="Cool Dude">Chris</a>
+<a asp-controller="Paul" asp-action="LeePlaysGuildWarsToo" asp-route-link="Fine Lady" asp-route-age="21">Lee</a>
+
+<partial name="_Aside" />

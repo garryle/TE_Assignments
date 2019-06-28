@@ -1,0 +1,15 @@
+﻿@section StyleSheet {
+    <link href="~/css/lee.css" rel="stylesheet" />
+}
+
+@section Title {
+    Lee
+}
+
+    <div class="lee">I'm Lee <span>@Model</span></div>
+
+@{
+    string name = "Lee Mulcahey";
+}
+
+<partial name="_footer" model="name" />

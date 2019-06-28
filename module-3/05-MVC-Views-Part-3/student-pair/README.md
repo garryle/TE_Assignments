@@ -1,0 +1,1 @@
+Today's pair exercises are a continuation of the prior day.
