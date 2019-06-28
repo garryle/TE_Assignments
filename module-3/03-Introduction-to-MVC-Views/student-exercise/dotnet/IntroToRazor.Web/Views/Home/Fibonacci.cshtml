@@ -2,19 +2,31 @@
 @{
     ViewData["Title"] = "Fibonacci";
     int max = Convert.ToInt32(ViewData["max"]);
+    int add = 1;
+    int fibA = 0;
+    int fibB = 1;
 }
 
-@functions
-{
-
-}
 
 <h2>Fibonacci</h2>
 
 <nav>
     <ul>
-        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-number="20">20</a></li>
-        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-number="50">50</a></li>
-        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-number="100">100</a></li>
+        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-max="20">20</a></li>
+        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-max="50">50</a></li>
+        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-max="100">100</a></li>
     </ul>
 </nav>
+
+<ul id="output">
+    @while (add <= max)
+    {
+        add = fibA + fibB;
+        fibA = fibB;
+        fibB = add;
+
+
+        <li class="A"> @fibA </li>
+
+    }
+</ul>

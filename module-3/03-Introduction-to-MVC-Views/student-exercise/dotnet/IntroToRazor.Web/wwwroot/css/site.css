@@ -36,3 +36,11 @@ nav ul li {
     color: #228b22;
     font-size: 40px;
 }
+
+li.A:first-child {
+    color: #228b22;
+}
+
+li.A:last-child {
+    color: #b71b1b;
+}
