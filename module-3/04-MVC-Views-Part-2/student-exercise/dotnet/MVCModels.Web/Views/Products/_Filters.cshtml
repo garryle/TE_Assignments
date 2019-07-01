@@ -18,19 +18,19 @@
     <ul>
         <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-maxPrice="25">Under $25</a></li>
         <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-minPrice="25" asp-route-maxPrice="50">$25 to $50</a></li>
-        <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-maxPrice="50">$50 & Above</a></li>
+        <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-minPrice="50">$50 & Above</a></li>
     </ul>
     <p>Avg. Review</p>
     <ul>
-        <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-MinRating=4><span class="filled" &#9734;></span><span class="filled" &#9734;></span><span class="filled" &#9734;></span><span>&#9734;</span></a>$ Up</li>
-        <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-MinRating=3><span class="filled" &#9734;></span><span class="filled" &#9734;></span><span &#9734;></span><span> &#9734;</span></a>$ Up</li>
-        <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-MinRating=2><span class="filled" &#9734;></span><span> &#9734;</span><span &#9734;></span><span> &#9734;</span></a>$ Up</li>
-        <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-MinRating=1><span &#9734;></span><span> &#9734;</span><span &#9734;></span><span> &#9734;</span></a>$ Up</li>
+        <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-MinRating=4><span class="filled">&#9734;</span><span class="filled">&#9734;</span><span class="filled">&#9734;</span><span class="filled">&#9734;</span><span> &#9734; </span></a>Up</li>
+        <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-MinRating=3><span class="filled">&#9734;</span><span class="filled">&#9734;</span><span class="filled">&#9734;</span><span> &#9734; </span><span> &#9734; </span></a> & Up</li>
+        <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-MinRating=2><span class="filled">&#9734;</span><span class="filled">&#9734;</span><span> &#9734; </span><span> &#9734; </span><span> &#9734; </span></a> & Up</li>
+        <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-MinRating=1><span class="filled">&#9734;</span><span> &#9734; </span><span> &#9734; </span><span> &#9734; </span><span> &#9734; </span></a> & Up</li>
     </ul>
     <p>Category</p>
     <ul>
         <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-Category="Home">Home</a></li>
-        <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-Category="Apperel">Apperel</a></li>
+        <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-Category="Apparel">Apparel</a></li>
         <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-Category="Jewelry">Jewelry</a></li>
         <li><a asp-controller=@ViewData["Controller"] asp-action=@ViewData["Action"] asp-route-Category="Garden">Garden</a></li>
     </ul>
