@@ -2,6 +2,8 @@
     ViewData["Title"] = "Index";
 }
 
+@model IList<Product>
+
 <h2>All Products</h2>
 
 <div id="card-page">
@@ -34,81 +36,109 @@
                  could be rendered based on different rules. For purposes
                  of demonstration we've written it out so you can see it
                  when you load the page up. -->
-
+            @foreach (Product tile in Model)
+            {
+                if (tile.RemainingStock > 5)
+                {
             <!-- Standard Product (assuming no special cases) -->
             <div class="tile ">
 
                 <!-- Link to the Detail page using the product id (e.g. Products/Detail/1) -->
-                <a class="product-image" href="#">
-                    <img src="/images/product-images/grey-sofa.jpg" />
+                <a class="product-image" href="products/detail?id=@tile.Id">
+                    <img src="/images/product-images/@tile.ImageName" />
                 </a>
                 <div class="details">
-                    <p class="name">Grey Sofa</p>
+                    <p class="name">@tile.Name</p>
 
                     <!-- .filled will make the star solid -->
                     <div class="rating">
-                        <span class="filled">&#9734;</span>
-                        <span class="filled">&#9734;</span>
-                        <span>&#9734;</span>
-                        <span>&#9734;</span>
-                        <span>&#9734;</span>
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            if (i < tile.AverageRating)
+                            {
+                                <span class="filled">&#9734;</span>
+                            }
+                            else
+                            {
+                            <span> &#9734; </span>
+                            }
+                        }
                     </div>
 
-                    <p class="price">$939.00</p>
+                    <p class="price">$@tile.Price</p>
                 </div>
             </div>
+                }
 
+                else if (tile.RemainingStock <= 5 && tile.RemainingStock != 0)
+                {
             <div class="tile ">
                 <!-- Include this if the product is considered a Top Seller -->
-                <span class="banner top-seller">Top Seller!</span>
+                <span class="banner top-seller">Top Seller</span>
 
                 <!-- Link to the Detail page using the product id (e.g. Products/Detail/1) -->
-                <a class="product-image" href="#">
-                    <img src="/images/product-images/grey-sofa.jpg" />
+                <a class="product-image" href="products/detail?id=@tile.Id">
+                    <img src="/images/product-images/@tile.ImageName" />
                 </a>
                 <div class="details">
-                    <p class="name">Grey Sofa</p>
+                    <p class="name">@tile.Name</p>
 
                     <!-- .filled will make the star solid -->
                     <div class="rating">
-                        <span class="filled">&#9734;</span>
-                        <span class="filled">&#9734;</span>
-                        <span class="filled">&#9734;</span>
-                        <span class="filled">&#9734;</span>
-                        <span>&#9734;</span>
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            if (i < tile.AverageRating)
+                            {
+                                <span class="filled">&#9734;</span>
+                            }
+                            else
+                            {
+                                <span> &#9734; </span>
+                            }
+                        }
                     </div>
 
                     <!-- Include this if the remaining quantity is greater than 0, but less than or equal to 5 -->
-                    <span class="product-alert">Only 4 left!</span>
-                    <p class="price">$939.00</p>
+                    <span class="product-alert">Only @tile.RemainingStock left!</span>
+                    <p class="price">$@tile.Price</p>
                 </div>
             </div>
+                }
 
+                else if (tile.RemainingStock == 0)
+                {
             <!-- Add the .sold-out class if the remaining quantity is 0 -->
             <div class="tile sold-out">
                 <!-- Include this if the remainig quantity is 0 -->
                 <span class="banner">Sold Out</span>
 
                 <!-- Link to the Detail page using the product id (e.g. Products/Detail/1) -->
-                <a class="product-image" href="#">
-                    <img src="/images/product-images/grey-sofa.jpg" />
+                <a class="product-image" href="products/detail?id=@tile.Id">
+                    <img src="/images/product-images/@tile.ImageName" />
                 </a>
                 <div class="details">
-                    <p class="name">Grey Sofa</p>
+                    <p class="name">@tile.Name</p>
 
                     <!-- .filled will make the star solid -->
                     <div class="rating">
-                        <span class="filled">&#9734;</span>
-                        <span>&#9734;</span>
-                        <span>&#9734;</span>
-                        <span>&#9734;</span>
-                        <span>&#9734;</span>
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            if (i < tile.AverageRating)
+                            {
+                                <span class="filled">&#9734;</span>
+                            }
+                            else
+                            {
+                                <span> &#9734; </span>
+                            }
+                        }
                     </div>
 
-                    <p class="price">$939.00</p>
+                    <p class="price">$@tile.Price</p>
                 </div>
             </div>
-
+                }
+            }
         </div>
     </div>
 </div>
