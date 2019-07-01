@@ -1,0 +1,10 @@
+﻿@model List<string>
+
+@{
+    ViewData["Title"] = "SearchResults";
+}
+
+@foreach(var city in Model)
+{
+    <div>@city</div>
+}
