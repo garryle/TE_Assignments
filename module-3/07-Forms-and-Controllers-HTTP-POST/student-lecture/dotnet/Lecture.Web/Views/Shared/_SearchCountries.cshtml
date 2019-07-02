@@ -1,0 +1,7 @@
+﻿@model CountrySearchViewModel
+
+<form asp-controller="World" asp-action="CountryTimeResults" method="get">
+    <label asp-for="SortColumn"></label>
+    <select asp-for="SortColumn" asp-items="Model.Columns"></select>
+    <button>Get Countries</button>
+</form>
