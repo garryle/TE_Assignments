@@ -11,7 +11,7 @@ namespace GETForms.Web.Controllers
     public class ActorsController : Controller
     {
 
-        private IActorDAO dao;
+        private IActorDAO dao = null;
 
         public ActorsController(IActorDAO dao)
         {
