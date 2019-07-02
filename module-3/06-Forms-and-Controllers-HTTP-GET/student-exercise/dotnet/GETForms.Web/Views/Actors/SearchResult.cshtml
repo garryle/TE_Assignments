@@ -3,5 +3,19 @@
     ViewData["Title"] = "SearchResult";
 }
 
-<h2>SearchResult</h2>
+<h2>Search Result</h2>
 
+<table class="table">
+    <tr>
+        <th>Name</th>
+    </tr>
+
+    @foreach (Actor actor in Model)
+    {
+        <tr>
+            <td>
+                @actor.LastName, @actor.FirstName
+            </td>
+        </tr>
+    }
+</table>

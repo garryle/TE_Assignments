@@ -34,6 +34,8 @@ namespace GETForms.Web
 
             string connectionString = Configuration.GetConnectionString("Default");
             services.AddScoped<IActorDAO, ActorDAO>(m => new ActorDAO(connectionString));
+            services.AddScoped<IFilmDAO, FilmDAO>(m => new FilmDAO(connectionString));
+            services.AddScoped<ICustomerDAO, CustomerDAO>(m => new CustomerDAO(connectionString));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

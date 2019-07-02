@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@model Film
+
+<form asp-controller="Films" asp-action="SearchResult" method="get">
+    <label> Min Length: </label>
+    <input asp-for="@Model.Length" />
+    <label> Max Length: </label>
+    <input asp-for="@Model.Length" />
+    <label> Genre: </label>
+    <input asp-for="@Model.G" />
+    <input type="submit" value="Search" class="btn" btn-default />
+</form>
