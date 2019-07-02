@@ -1,0 +1,11 @@
+﻿@model  PresidentialViewModel
+
+@section Title {
+    World
+}
+
+<form asp-controller="World" asp-action="PresidentialDetail" method="get">
+    <label asp-for="Country"></label>
+    <select asp-for="Country" asp-items="Model.Countries"></select>
+    <button>Submit</button>
+</form>
