@@ -1,0 +1,30 @@
+﻿@model CountryTimeResultsViewModel
+
+@section Title {
+    Country Time Results
+}
+
+@{
+CountrySearchViewModel vm = new CountrySearchViewModel();
+vm.Columns = Model.Columns;
+}
+
+<partial name="_SearchCountries" model="vm" />
+<hr />
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Continent</th>
+        <th>Head Of State</th>
+    </tr>
+    @foreach(var country in Model.Countries)
+    {
+    <tr>
+        <td>@country.Code</td>
+        <td>@country.Name</td>
+        <td>@country.Continent</td>
+        <td>@country.HeadOfState</td>
+    </tr>
+    }
+</table>

@@ -1,0 +1,17 @@
+﻿@model AddCountryViewModel
+
+@section Title {
+    Add Country
+}
+
+@foreach(var country in Model.ExistingCountries)
+{
+    <div>@country</div>
+}
+
+<form action="/World/AddCountry" asp-antiforgery="true" method="post">
+@*<form asp-controller="World" asp-action="AddCountry" method="post">*@
+    <label asp-for="Name"></label>
+    <input asp-for="Name">
+    <button>Submit</button>
+</form>
