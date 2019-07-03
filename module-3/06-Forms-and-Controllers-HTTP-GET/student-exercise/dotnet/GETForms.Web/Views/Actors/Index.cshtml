@@ -5,10 +5,9 @@
 
 @model Actor
 
-    <form asp-controller="Actors" asp-action="SearchResult" method="get">
-        <label> Last Name: </label>
-        <input asp-for="@Model.LastName"/>
-        <input type="submit" value="Search" class="btn" btn-default />
-    </form>
+@{
+    Actor vm = new Actor();
+}
 
-
+<partial name="_ActorSearch" model="vm" />
+<hr />

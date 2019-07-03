@@ -3,7 +3,12 @@
     ViewData["Title"] = "SearchResult";
 }
 
+@{
+    Actor vm = new Actor();
+}
 
+<partial name="_ActorSearch" model="vm" />
+<hr />
 
 <h2>Search Result</h2>
 

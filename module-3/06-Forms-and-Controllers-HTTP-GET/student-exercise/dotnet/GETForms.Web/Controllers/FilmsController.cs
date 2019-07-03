@@ -11,7 +11,7 @@ namespace GETForms.Web.Controllers
     public class FilmsController : Controller
     {
 
-        private IFilmDAO dao;
+        private IFilmDAO dao = null;
 
         public FilmsController(IFilmDAO dao)
         {
