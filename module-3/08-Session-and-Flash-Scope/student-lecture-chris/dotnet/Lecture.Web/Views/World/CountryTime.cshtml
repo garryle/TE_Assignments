@@ -1,0 +1,13 @@
+﻿@model List<SelectListItem>
+
+@section Title {
+    Country Time
+}
+
+@{
+    CountrySearchViewModel vm = new CountrySearchViewModel();
+    vm.Columns = Model;
+}
+
+<partial name="_SearchCountries" model="vm" />
+<hr />

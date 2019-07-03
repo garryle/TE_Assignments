@@ -1,0 +1,13 @@
+﻿@model LaunchPadViewModel
+
+@section Title {
+    Launch Pad
+}
+
+<partial name="_NuclearLinks" />
+
+<form asp-controller="Nuclear" asp-action="LaunchMissile" method="post">
+    <label asp-for="LaunchCode"></label>
+    <input asp-for="LaunchCode" />
+    <button>Launch Missile</button>
+</form>

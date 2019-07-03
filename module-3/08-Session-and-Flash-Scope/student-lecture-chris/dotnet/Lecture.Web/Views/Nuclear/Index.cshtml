@@ -1,0 +1,18 @@
+﻿@model PresidentialViewModel
+
+@section Title {
+    Index
+}
+
+<partial name="_NuclearLinks" />
+
+@if(Model.ErrorMessage != null && Model.ErrorMessage.Length > 0)
+{
+    <div class="error">@Model.ErrorMessage</div>
+}
+
+<form asp-controller="Nuclear" asp-action="Codes" method="get">
+    <label asp-for="Country"></label>
+    <select asp-for="Country" asp-items="Model.Countries"></select>
+    <button>Get Code</button>
+</form>
