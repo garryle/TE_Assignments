@@ -31,11 +31,11 @@ namespace GETForms.Web.Controllers
         /// </summary>
         /// <param name="request">A request model that contains the search parameters.</param>
         /// <returns></returns>
-        public ActionResult SearchResult(string min, string max, string category)
+        public ActionResult SearchResult(string minLength, string maxLength, string genre)
         {
             /* Call the DAL and pass the values as a model back to the View */
 
-            IList<Film> filmList = dao.GetFilmsBetween(category, int.Parse(min), int.Parse(max));
+            IList<Film> filmList = dao.GetFilmsBetween(genre, int.Parse(minLength), int.Parse(maxLength));
 
             return View(filmList);
         }

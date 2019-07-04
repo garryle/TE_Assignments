@@ -5,3 +5,11 @@
 
 <h2>SearchResult</h2>
 
+@model Film
+
+@{
+    Film vm = new Film();
+}
+
+<partial name="_FilmSearch" model="vm" />
+<hr />

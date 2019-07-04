@@ -1,4 +1,15 @@
 ﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+@model Film
+
+<form asp-controller="Films" asp-action="SearchResult" method="get">
+    <label> Minimum Length: </label>
+    @*<input asp-for="@Model.Min" />*@
+
+    <label> Max Length: </label>
+    @*<input asp-for="@Model.Max" />*@
+
+    <label> Genre: </label>
+    @*<input asp-for="@Model.Description" />*@
+
+    <input type="submit" value="Search" class="btn" btn-default />
+</form>

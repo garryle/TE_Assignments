@@ -3,4 +3,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+@model Film
+
+@{
+    Film vm = new Film();
+}
+
+<partial name="_FilmSearch" model="vm" />
+<hr />
