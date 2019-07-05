@@ -1,0 +1,14 @@
+﻿@model ExplosionViewModel
+
+@section Title {
+    Explosion
+}
+
+@{ 
+    int rif = Model.OldPop - Model.NewPop;
+}
+
+<partial name="_NuclearLinks" />
+
+<div>@Model.CountryName<span> just exploded!</span></div>
+<div>Reduction in Force: @rif</div>
