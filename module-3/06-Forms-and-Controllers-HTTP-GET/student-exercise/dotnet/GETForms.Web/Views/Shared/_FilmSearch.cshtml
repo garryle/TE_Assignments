@@ -1,15 +1,15 @@
 ﻿
-@model Film
+@model FilmViewModel
 
 <form asp-controller="Films" asp-action="SearchResult" method="get">
     <label> Minimum Length: </label>
-    @*<input asp-for="@Model.Min" />*@
+    <input asp-for="@Model.minLength" />
 
     <label> Max Length: </label>
-    @*<input asp-for="@Model.Max" />*@
+    <input asp-for="@Model.maxLength" />
 
     <label> Genre: </label>
-    @*<input asp-for="@Model.Description" />*@
+    <select asp-for="@Model.genre" asp-items="Model.Genres"> </select>
 
     <input type="submit" value="Search" class="btn" btn-default />
 </form>

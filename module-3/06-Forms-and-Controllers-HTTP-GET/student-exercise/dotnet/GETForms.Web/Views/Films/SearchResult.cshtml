@@ -3,13 +3,32 @@
     ViewData["Title"] = "SearchResult";
 }
 
-<h2>SearchResult</h2>
-
-@model Film
-
 @{
-    Film vm = new Film();
+    FilmViewModel vm = new FilmViewModel();
 }
 
 <partial name="_FilmSearch" model="vm" />
 <hr />
+
+<h2>Film Search Result</h2>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Release Year</th>
+        <th>Length</th>
+        <th>Rating</th>
+    </tr>
+
+    @foreach (Film film in Model)
+    {
+        <tr>
+            <td> @film.Title </td> 
+            <td> @film.Description </td> 
+            <td> @film.ReleaseYear </td>  
+            <td> @film.Length </td>
+            <td> @film.Rating </td>
+        </tr>
+    }
+</table>
