@@ -1,0 +1,21 @@
+﻿nav {
+    padding-bottom: 20px;
+}
+
+.error {
+    color: red;
+}
+
+td, th {
+    border: 1px black solid;
+}
+
+#identify {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.field-validation-error {
+    color: red;
+}
