@@ -3,4 +3,38 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model List<Review>
 
+    <h1>Reviews</h1>
+    <style>
+
+        div.post:nth-child(even) {
+            background-color: rgb(211, 211, 211);
+        }
+    </style>
+    <body>
+
+        @foreach (Review reviews in Model)
+        {
+            <div class="review">
+                <div class="Title" style="font-size:120%;">
+                    @reviews.Title
+                    @for (int i = 0; i < 5; i++)
+                        {
+                            if (reviews.Rating > i)
+                            {
+                                <img src="~/images/star.png" />
+                            }
+                        }
+                </div>
+                <div class="poster">
+                    by @reviews.Username on @reviews.ReviewDate
+                </div>
+
+                <div class="post">@reviews.Message</div>
+            </div>
+        }
+
+
+    </body>
+    <a asp-controller="Home" asp-action="GetNewReview">Submit Review</a>

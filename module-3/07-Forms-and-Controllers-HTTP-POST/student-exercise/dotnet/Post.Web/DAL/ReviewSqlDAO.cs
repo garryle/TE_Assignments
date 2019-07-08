@@ -9,7 +9,7 @@ namespace Post.Web.DAL
 {
     public class ReviewSqlDAO : IReviewDAO
     {
-        private readonly string connectionString;
+        private string connectionString;
 
         public ReviewSqlDAO(string connectionString)
         {
@@ -24,33 +24,26 @@ namespace Post.Web.DAL
         {
             IList<Review> reviews = new List<Review>();
 
-            try
+            string sql = "select * from reviews";
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM reviews;", conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
 
-                    while (reader.Read())
+                while (reader.Read())
+                {
+                    Review review = new Review()
                     {
-                        Review review = new Review()
-                        {
-                            Username = Convert.ToString(reader["username"]),
-                            Rating = Convert.ToInt32(reader["rating"]),
-                            Title = Convert.ToString(reader["review_title"]),
-                            Message = Convert.ToString(reader["review_text"]),
-                            ReviewDate = Convert.ToDateTime(reader["review_date"])
-                        };
-                        reviews.Add(review);
-                    }
+                        Username = Convert.ToString(reader["username"]),
+                        Rating = Convert.ToInt32(reader["rating"]),
+                        Title = Convert.ToString(reader["review_title"]),
+                        Message = Convert.ToString(reader["review_text"]),
+                        ReviewDate = Convert.ToDateTime(reader["review_date"])
+                    };
+                    reviews.Add(review);
                 }
             }
-            catch (SqlException)
-            {
-                throw;
-            }
-
             return reviews;
         }
 
@@ -66,12 +59,12 @@ namespace Post.Web.DAL
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO reviews VALUES (@username, @rating, @review_title, @review_text, @review_date);", conn);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO reviews (username, rating, review_title, review_text, review_date) VALUES (@username, @rating, @review_title, @review_text, @review_date);", conn);
                     cmd.Parameters.AddWithValue("@username", newReview.Username);
                     cmd.Parameters.AddWithValue("@rating", newReview.Rating);
                     cmd.Parameters.AddWithValue("@review_title", newReview.Title);
                     cmd.Parameters.AddWithValue("@review_text", newReview.Message);
-                    cmd.Parameters.AddWithValue("@review_date", newReview.ReviewDate);
+                    cmd.Parameters.AddWithValue("@review_date", DateTime.Now);
 
                     cmd.ExecuteNonQuery();
                 }

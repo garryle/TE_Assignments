@@ -34,7 +34,7 @@ namespace Post.Web
             // CONFIGURE THE APPLICATION DEPENDENCIES
 
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
-            services.AddTransient<IReviewDAO>(m => new ReviewSqlDAO(connectionString));
+            services.AddScoped<IReviewDAO, ReviewSqlDAO>(m => new ReviewSqlDAO(connectionString));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

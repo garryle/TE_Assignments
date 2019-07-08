@@ -12,11 +12,39 @@ namespace Post.Web.Controllers
     public class HomeController : Controller
     {
 
+        private IReviewDAO _db;
+
+        public HomeController(IReviewDAO db)
+        {
+            _db = db;
+        }
+
         // GET: Home
         public ActionResult Index()
         {
-            return View();
-        }        
+            IList<Review> reviews = _db.GetAllReviews();
+            return View(reviews);
+        }
+
+        [HttpGet]
+        public ActionResult GetNewReview()
+        {
+            Review vm = new Review();
+            return View(vm);
+        }
+
+        [HttpPost]
+        public ActionResult PostReview(Review model)
+        {
+            int success = _db.SaveReview(model);
+
+            if (success != 1)
+            {
+                TempData["error"] = "unable to post review, try again";
+            }
+            return RedirectToAction("Index");
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
