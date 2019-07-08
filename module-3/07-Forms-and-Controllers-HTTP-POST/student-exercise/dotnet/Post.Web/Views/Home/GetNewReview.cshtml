@@ -3,27 +3,28 @@
     ViewData["Title"] = "GetNewReview";
 }
 
+
 @model Review
 
-<h2>GetNewReview</h2>
+<h2>New Book Review</h2>
 
 <form asp-controller="Home" asp-action="PostReview" method="POST">
     <div>
-        <label asp-for="Username"></label>
+        <label asp-for="Username">Enter your name:</label>
         <input asp-for="Username" />
     </div>
 
     <div>
-        <label asp-for="Rating"></label>
+        <label asp-for="Rating">How many stars:</label>
         <input asp-for="Rating" />
     </div>
 
     <div>
-        <label asp-for="Title"></label>
+        <label asp-for="Title">Provide a title:</label>
         <input asp-for="Title" />
     </div>
     <div>
-        <label asp-for="Message"></label>
+        <label asp-for="Message">Review:</label>
         <input asp-for="Message" />
     </div>
     <button>Add Review</button>

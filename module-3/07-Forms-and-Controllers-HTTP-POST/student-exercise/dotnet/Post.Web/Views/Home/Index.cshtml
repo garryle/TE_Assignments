@@ -5,27 +5,27 @@
 
 @model List<Review>
 
-    <h1>Reviews</h1>
+    <img src="~/images/forDummies.png" height="150" width ="150"/>
+    <h1>Past Reviews</h1>
     <style>
 
-        div.post:nth-child(even) {
+        div.review:nth-child(even) {
             background-color: rgb(211, 211, 211);
         }
     </style>
     <body>
-
         @foreach (Review reviews in Model)
         {
             <div class="review">
                 <div class="Title" style="font-size:120%;">
                     @reviews.Title
                     @for (int i = 0; i < 5; i++)
+                    {
+                        if (reviews.Rating > i)
                         {
-                            if (reviews.Rating > i)
-                            {
-                                <img src="~/images/star.png" />
-                            }
+                            <img src="~/images/star.png" />
                         }
+                    }
                 </div>
                 <div class="poster">
                     by @reviews.Username on @reviews.ReviewDate
