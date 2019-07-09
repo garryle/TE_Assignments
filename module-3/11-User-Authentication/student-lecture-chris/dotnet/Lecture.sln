@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture.Web", "Lecture.Web\Lecture.Web.csproj", "{F40328AA-186E-4988-B5F3-61121118E23B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security", "Security\Security.csproj", "{80953A43-E523-454D-9CCB-C3077E22ABF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F40328AA-186E-4988-B5F3-61121118E23B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F40328AA-186E-4988-B5F3-61121118E23B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F40328AA-186E-4988-B5F3-61121118E23B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F40328AA-186E-4988-B5F3-61121118E23B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80953A43-E523-454D-9CCB-C3077E22ABF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80953A43-E523-454D-9CCB-C3077E22ABF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80953A43-E523-454D-9CCB-C3077E22ABF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80953A43-E523-454D-9CCB-C3077E22ABF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C4D2532-C325-49F4-AAF0-E4247F20BFB4}
+	EndGlobalSection
+EndGlobal
