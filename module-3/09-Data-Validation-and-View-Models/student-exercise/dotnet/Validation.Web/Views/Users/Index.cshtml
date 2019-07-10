@@ -3,6 +3,23 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@model LoginViewModel
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a odio lobortis, rhoncus mauris dignissim, tristique lectus. Morbi risus ex, pulvinar tincidunt lacus placerat, posuere faucibus felis. Proin semper nisi sit amet vulputate lobortis. Pellentesque gravida lectus quis neque vestibulum mattis. Sed pellentesque maximus quam. Aliquam erat volutpat. Aliquam ornare ligula in lobortis tincidunt. Ut leo ipsum, ullamcorper eget quam sed, consequat congue diam. Praesent ullamcorper massa et ultrices condimentum. Fusce dapibus sodales malesuada. Phasellus a lacus ultrices, commodo velit ut, gravida mauris. Donec ac neque urna. Nam ut condimentum elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu condimentum nunc, at vehicula purus. Fusce euismod nunc sed arcu convallis congue.</p>
+<h2>Login</h2>
+
+
+<form asp-controller="Users" asp-action="LoginConfirmation" method="POST">
+
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+    </div>
+
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" />
+    </div>
+
+    <button>Submit</button>
+
+</form>

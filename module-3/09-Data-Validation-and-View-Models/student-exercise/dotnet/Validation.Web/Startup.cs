@@ -44,7 +44,7 @@ namespace Validation.Web
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Users/Error");
                 app.UseHsts();
             }
 
@@ -56,7 +56,7 @@ namespace Validation.Web
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Users}/{action=Index}/{id?}");
             });
         }
     }
